@@ -1,6 +1,6 @@
 # 👋 Hi, I’m @D-Dawliet
 - Interested in Machine Learning and AI
-- Currently learning #Python
+- Currently learning Python
 - Reach me:
   - Discord: dead.0_0.
   - Insta: crack.head_0
