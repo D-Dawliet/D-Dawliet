@@ -86,17 +86,23 @@ def key(click_x, click_y):
                     operation_2 = float(current_input)
                     current_input = str(operation())
                     symbols = ""
-                    operation_1 = current_input
+                    operation_1 = float(current_input)
                     operation_2 = None
                     screen_update()
             elif sign == "√":
                 if current_input:
-                    current_input = str(math.sqrt(float(current_input)))
-                elif not current_input and operation_1 is not None:
-                    current_input = str(math.sqrt(float(current_input)))
-                symbols = ""
-                operation_1 = ""
-
+                    if operation_1 is None:
+                        operation_1 = float(current_input)
+                        current_input = str(math.sqrt(operation_1))
+                        operation_1 = float(current_input)
+                    else:
+                        current_input = str(math.sqrt(float(current_input)))
+                        operation_2 = float(current_input)
+                elif operation_1 is not None:
+                    current_input = str(math.sqrt(operation_1))
+                    operation_1 = float(current_input)
+                    operation_2 = None
+                screen_update()
             else:
                 if current_input:
                     if operation_1 is None:
