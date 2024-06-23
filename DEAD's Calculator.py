@@ -83,7 +83,7 @@ def key(click_x, click_y):
                 operation_2 = None
             elif sign == "=":
                 if operation_1 is not None and symbols and current_input:
-                    operation_2 = int(current_input)
+                    operation_2 = float(current_input)
                     current_input = str(operation())
                     symbols = ""
                     operation_1 = current_input
@@ -91,29 +91,29 @@ def key(click_x, click_y):
                     screen_update()
             elif sign == "√":
                 if current_input:
-                    current_input = str(math.sqrt(int(current_input)))
+                    current_input = str(math.sqrt(float(current_input)))
                 elif not current_input and operation_1 is not None:
-                    current_input = str(math.sqrt(int(current_input)))
+                    current_input = str(math.sqrt(float(current_input)))
                 symbols = ""
                 operation_1 = ""
 
             else:
                 if current_input:
                     if operation_1 is None:
-                        operation_1 = int(current_input)
+                        operation_1 = float(current_input)
                         symbols = sign
                         current_input = ""
                     elif operation_1 is not None and symbols and current_input:
-                        operation_2 = int(current_input)
+                        operation_2 = float(current_input)
                         current_input = str(operation())
                         symbols = sign
-                        operation_1 = int(current_input)
+                        operation_1 = float(current_input)
                         current_input = ""
                     elif operation_1 is not None and operation_2 is None and not symbols and current_input:
-                        operation_2 = int(current_input)
+                        operation_2 = float(current_input)
                         current_input = str(operation())
                         symbols = sign
-                        operation_1 = int(current_input)
+                        operation_1 = float(current_input)
                         current_input = ""
 
             screen_update()
